@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="your-logo.png">
+    <title>আমাদের পাঠশালা - Amader Pathshala | HSC & Admission Preparation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Hind Siliguri -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Netlify Identity Widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+        }
+
+        .btn-buy {
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+        .btn-buy::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-buy:hover::after {
+            left: 100%;
+        }
+        .btn-buy:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px -5px rgba(79, 70, 229, 0.5);
+        }
+        .btn-buy:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .pro-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .pro-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+        }
+        .pro-btn:active {
+            transform: translateY(0);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes textGradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-gradient-text {
+            background: linear-gradient(270deg, #4f46e5, #3b82f6, #6366f1, #ec4899);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGradientAnim 6s ease infinite;
+        }
+
+        @keyframes colorShiftBlue {
+            0%, 100% { color: #3b82f6; }
+            33% { color: #8b5cf6; }
+            66% { color: #06b6d4; }
+        }
+        .animated-blue-word {
+            animation: colorShiftBlue 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-6px) scale(1.08); }
+        }
+        .animated-result-icon {
+            animation: iconBounce 3s ease-in-out infinite;
+        }
+        .animated-result-icon:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .animated-result-icon:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .glass-photo-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 20px 40px -15px rgba(79, 70, 229, 0.25), 
+                0 10px 20px -10px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .dark .glass-photo-card {
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.6), 
+                0 10px 20px -10px rgba(79, 70, 229, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .glass-photo-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                0 30px 60px -15px rgba(79, 70, 229, 0.4), 
+                0 15px 25px -10px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .profile-glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        }
+        .dark .profile-glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-popup-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        .dark .glass-popup-card {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/30 transition-transform hover:scale-105">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-extrabold animated-gradient-text">আমাদের পাঠশালা</span>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wide">Amader Pathshala</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium">
+                <button onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Home</button>
+                <a href="#courses" onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Courses</a>
+                <a href="#exams" onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Exams</a>
+                <a href="#results" onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Results</a>
+                <a href="#teachers" onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Teachers</a>
+                <a href="#about" onclick="switchPage('home')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">About</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:scale-110 active:scale-95 transition-transform shadow-sm" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <button onclick="switchPage('checkout')" class="relative p-2.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 hover:scale-105 active:scale-95 transition-all shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 w-5 h-5 bg-rose-500 text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md animate-pulse">0</span>
+                </button>
+                <div id="auth-action-container" class="flex items-center">
+                    <button onclick="openNetlifyAuth()" class="btn-buy px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-white font-semibold text-xs sm:text-sm shadow-md">
+                        Login
+                    </button>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:scale-105 active:scale-95 transition-all shadow-sm">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl">
+            <button onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">Home</button>
+            <a href="#courses" onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">Courses</a>
+            <a href="#exams" onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">Exams</a>
+            <a href="#results" onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">Results</a>
+            <a href="#teachers" onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">Teachers</a>
+            <a href="#about" onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 font-medium transition-colors">About</a>
+            <div id="mobile-auth-container" class="pt-2">
+                <button onclick="openNetlifyAuth(); toggleMobileMenu();" class="w-full btn-buy py-3 rounded-xl text-white font-semibold text-sm text-center shadow-md">Register / Login</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN APP CONTAINER -->
+    <main class="pt-20">
+
+        <!-- ================= HOME VIEW ================= -->
+        <div id="view-home" class="view-container">
+            
+            <!-- Hero Section -->
+            <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-indigo-50/50 via-transparent to-transparent dark:from-indigo-950/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left animate-fade-in-up">
+                            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-semibold shadow-sm">
+                                <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                                <span>Learning today, leading tomorrow</span>
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                                তোমার স্বপ্ন, <span class="animated-gradient-text">আমাদের প্রস্তুতি</span>
+                            </h1>
+                            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0">
+                                HSC & Admission Preparation-এর জন্য নির্ভরযোগ্য শিক্ষামূলক প্ল্যাটফর্ম। সহজে শেখো, সঠিকভাবে প্রস্তুতি নাও, এগিয়ে যাও।
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                                <a href="#courses" onclick="switchPage('home')" class="w-full sm:w-auto btn-buy px-8 py-4 rounded-xl text-white font-bold text-base shadow-xl flex items-center justify-center space-x-3">
+                                    <span>Explore Courses</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="#exams" class="w-full sm:w-auto pro-btn px-8 py-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold border border-slate-200 dark:border-slate-700 shadow-sm text-center flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-pen-to-square animated-blue-word"></i>
+                                    <span>Give Exam Now</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 relative flex justify-center">
+                            <div class="relative w-full max-w-md animate-float">
+                                <div class="absolute -inset-2 rounded-[2rem] bg-gradient-to-r from-indigo-500/20 to-blue-500/20 opacity-70 blur-xl"></div>
+                                <div class="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-6 sm:p-8 rounded-[2rem] border border-slate-200/80 dark:border-slate-800 shadow-2xl space-y-4">
+                                    <div class="text-center pb-3">
+                                        <h3 class="text-2xl sm:text-3xl font-extrabold animated-gradient-text">ফ্রি ক্লাস</h3>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div onclick="openFreeClassModal('HSC 26 English 1st Paper')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC 26 English 1st Paper</span>
+                                            <i class="fa-solid fa-book-open animated-blue-word text-lg"></i>
+                                        </div>
+                                        <div onclick="openFreeClassModal('HSC Math 2nd')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC Math 2nd</span>
+                                            <i class="fa-solid fa-calculator animated-blue-word text-lg"></i>
+                                        </div>
+                                        <div onclick="openFreeClassModal('HSC Chemistry 1st Paper')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC Chemistry 1st Paper</span>
+                                            <i class="fa-solid fa-atom text-purple-600 dark:text-purple-400 text-lg"></i>
+                                        </div>
+                                        <div onclick="openFreeClassModal('HSC Physics 2nd Paper')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC Physics 2nd Paper</span>
+                                            <i class="fa-solid fa-gears animated-blue-word text-lg"></i>
+                                        </div>
+                                        <div onclick="openFreeClassModal('HSC Botany 2026')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC Botany 2026</span>
+                                            <i class="fa-solid fa-seedling text-emerald-600 dark:text-emerald-400 text-lg"></i>
+                                        </div>
+                                        <div onclick="openFreeClassModal('HSC ICT 2026')" class="cursor-pointer p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-100 dark:border-slate-700/50 shadow-sm font-semibold text-sm flex items-center justify-between text-slate-700 dark:text-slate-200 hover:scale-[1.02] hover:border-indigo-500/50 transition-all pro-btn">
+                                            <span>HSC ICT 2026</span>
+                                            <i class="fa-solid fa-laptop-code text-cyan-600 dark:text-cyan-400 text-lg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slider Section -->
+            <section class="py-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 group">
+                        <div id="hero-slider" class="w-full h-full relative">
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 slider-item">
+                                <img src="প্রিমিয়াম ব্যাচ.png" alt="Slide 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="প্রিমিয়াম ব্যাচ (1).png" alt="Slide 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="WhatsApp Image 2026-10-09 at 3.09.54 AM.jpeg" alt="Slide 3" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="প্রিমিয়াম ব্যাচ (3).png" alt="Slide 4" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="HSC (1).png" alt="Slide 5" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="WhatsApp Image 2026-10-09 at 2.32.44 AM.jpeg" alt="Slide 6" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="WhatsApp Image 2026-10-09 at 2.47.17 AM (1).jpeg" alt="Slide 7" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 slider-item">
+                                <img src="WhatsApp Image 2026-10-09 at 3.38.25 AM.jpeg" alt="Slide 8" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+                            <button onclick="currentSlide(0)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(3)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(4)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(5)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(6)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                            <button onclick="currentSlide(7)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all shadow-md"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="py-16 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                        <h2 class="text-3xl font-extrabold tracking-tight">কেন <span class="animated-gradient-text">আমাদের পাঠশালা</span>?</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-50 dark:bg-indigo-950/80 animated-blue-word flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">Quality Content</h4>
+                            <p class="text-xs text-slate-500">বোঝার জন্য সহজ, মানসম্মত কনটেন্ট</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-blue-50 dark:bg-blue-950/80 animated-blue-word flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">Expert Teachers</h4>
+                            <p class="text-xs text-slate-500">বিষয়ভিত্তিক অভিজ্ঞ ও দক্ষ শিক্ষকবৃন্দ</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">Video Classes</h4>
+                            <p class="text-xs text-slate-500">সম্পূর্ণ ও পরিমার্জিত ভিডিও ক্লাস</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">CQ & MCQ Practice</h4>
+                            <p class="text-xs text-slate-500">পরীক্ষা প্রস্তুতির জন্য নিয়মিত অনুশীলন</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">Exam Preparation</h4>
+                            <p class="text-xs text-slate-500">HSC ও ভর্তি পরীক্ষার সম্পূর্ণ প্রস্তুতি</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <h4 class="font-bold text-sm mb-1">Admission Guidance</h4>
+                            <p class="text-xs text-slate-500">ভর্তি পরীক্ষার জন্য সঠিক দিকনির্দেশনা</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <!-- Courses Section -->
+<section id="courses" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span class="animated-gradient-text font-bold text-sm tracking-wider uppercase">🔥 SPECIAL DISCOUNT OFFER 🔥</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">আজই ভর্তি হয়ে শুরু করো তোমার প্রস্তুতি!</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. ADMISSION COURSE- ORIGIN 26 -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="প্রিমিয়াম ব্যাচ.png" alt="Admission Course- Origin 26" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-amber-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Origin-26</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Admission Course</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">Admission Course- Origin 26</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">বিজ্ঞান, মানবিক ও বিভাগ পরিবর্তন এর সম্পূর্ণ ভর্তি প্রস্তুতি কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳১,১৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳৪,৫০০</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('Admission Course- Origin 26', 1199, 'প্রিমিয়াম ব্যাচ.png')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('Admission Course- Origin 26', 1199)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. VARSITY EXAM BATCH — ORIGIN 26 -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="প্রিমিয়াম ব্যাচ (1).png" alt="Varsity Exam Batch- Origin 26" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-teal-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Varsity 26</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs text-teal-600 dark:text-teal-400 font-bold uppercase tracking-wider">Exam Batch</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">Varsity Exam Batch- Origin 26</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">ভার্সিটি ভর্তি পরীক্ষার জন্য বিজ্ঞান ও মানবিক/বিভাগ পরিবর্তন এক্সাম ব্যাচ।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳৯৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳১,৯৯৯</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('Varsity Exam Batch- Origin 26', 999, 'প্রিমিয়াম ব্যাচ (1).png')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('Varsity Exam Batch- Origin 26', 999)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. HSC 27 SCIENCE COMBO + EBI -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="WhatsApp Image 2026-10-09 at 3.09.54 AM.jpeg" alt="HSC 27 Science Combo+EBI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Combo + EBI</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs text-purple-600 dark:text-purple-400 font-bold uppercase tracking-wider">HSC 2027</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">HSC 27 Science Combo+EBI</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">এইচএসসি ২০২৭ সায়েন্স কম্বো এবং ইবিআই কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳৩,৯৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳৮,০০০</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('HSC 27 Science Combo+EBI', 3999, 'WhatsApp Image 2026-10-09 at 3.09.54 AM.jpeg')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('HSC 27 Science Combo+EBI', 3999)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. HSC 27 & 28 SINGLE COURSE -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="প্রিমিয়াম ব্যাচ (3).png" alt="HSC 27 & 28 Single Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Strive 2.0</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs animated-blue-word font-bold uppercase tracking-wider">HSC 2027 & 2028</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">HSC 27 & 28 Single Course</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">যে কোনো একটি বিষয়ের উপর সম্পূর্ণ প্রস্তুতি।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳১,১৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳১,৯৯৯</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('HSC 27 & 28 Single Course', 1199, 'প্রিমিয়াম ব্যাচ (3).png')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('HSC 27 & 28 Single Course', 1199)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. HSC SCIENCE COMBO - 4 SUBJECTS -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="HSC (1).png" alt="HSC Science Combo- 4 Subjects" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Combo Offer</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs text-purple-600 dark:text-purple-400 font-bold uppercase tracking-wider">Physics + Chem + Math + Bio</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">HSC Science Combo- 4 Subjects</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">বিজ্ঞান বিভাগের ৪টি মূল বিষয়ের সম্পূর্ণ কম্বো কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳২,৯৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳৭,৯৯৯</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('HSC Science Combo- 4 Subjects', 2999, 'HSC (1).png')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('HSC Science Combo- 4 Subjects', 2999)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. EBI FULL COURSE -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="WhatsApp Image 2026-10-09 at 2.32.44 AM.jpeg" alt="EBI Full Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Full Course</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs animated-blue-word font-bold uppercase tracking-wider">EBI Batch</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">EBI Full Course</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">EBI সেকশনের জন্য পূর্ণাঙ্গ কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳১,৬৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳৩,৯৯৯</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('EBI Full Course', 1699, 'WhatsApp Image 2026-10-09 at 2.32.44 AM.jpeg')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('EBI Full Course', 1699)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. HSC 28 SCIENCE COMBO + EBI -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="WhatsApp Image 2026-10-09 at 2.47.17 AM (1).jpeg" alt="HSC 28 Science Combo+EBI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Combo + EBI</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs animated-blue-word font-bold uppercase tracking-wider">HSC 2028</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">HSC 28 Science Combo+EBI</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">এইচএসসি ২০২৮ সায়েন্স কম্বো এবং ইবিআই কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳৫,৫০০</span>
+                        <span class="text-sm text-slate-400 line-through">৳১১,০০০</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('HSC 28 Science Combo+EBI', 5500, 'WhatsApp Image 2026-10-09 at 2.47.17 AM (1).jpeg')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('HSC 28 Science Combo+EBI', 5500)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. PRE ADMISSION COURSE -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="WhatsApp Image 2026-10-09 at 3.38.25 AM.jpeg" alt="Pre Admission Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">Pre-Admission</div>
+                </div>
+                <div class="p-8 pb-4">
+                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Start Early • Stay Ahead</span>
+                    <h3 class="text-xl font-bold mt-1 mb-3">Pre Admission Course</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">বিজ্ঞান ও মানবিক বিভাগের জন্য বিশেষ প্রি-এডমিশন প্রস্তুতি কোর্স।</p>
+                </div>
+                <div class="p-8 pt-0">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-2xl font-black animated-blue-word">৳২,৯৯৯</span>
+                        <span class="text-sm text-slate-400 line-through">৳৭,০০০</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="buyNow('Pre Admission Course', 2999, 'WhatsApp Image 2026-10-09 at 3.38.25 AM.jpeg')" class="flex-1 btn-buy py-3 rounded-xl text-white text-xs font-bold shadow-md">Buy Now</button>
+                        <button onclick="addToCart('Pre Admission Course', 2999)" class="pro-btn px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold border border-slate-200 dark:border-slate-700" title="Add to Cart"><i class="fa-solid fa-cart-plus animated-blue-word text-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+            <!-- Exam / Model Test Section -->
+            <section id="exams" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                        <span class="animated-gradient-text font-bold text-sm tracking-wider uppercase">অনলাইন পরীক্ষা ও মডেল টেস্ট</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">আপনার প্রস্তুতি যাচাই করুন</h2>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">নিয়মিত পরীক্ষা দিয়ে নিজের দক্ষতা বাড়াও এবং রিয়েল-টাইম লিডারবোর্ডে নিজের অবস্থান দেখে নাও।</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-300 text-xs font-bold shadow-sm">ফ্রি এক্সাম</span>
+                                    <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> ৩০ মিনিট</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">HSC Physics Model Test</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs mb-6">পদার্থবিজ্ঞান ১ম পত্র (ভেক্টর ও গতিবিদ্যা) এর ওপর অনলাইন লাইভ কুইজ টেস্ট।</p>
+                                <div class="space-y-2 text-xs text-slate-500 mb-6">
+                                    <div class="flex items-center justify-between">
+                                        <span>প্রশ্ন সংখ্যা: ২৫টি MCQ</span>
+                                        <span>পূর্ণমান: ২৫</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-indigo-600 h-full w-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="showModal('পরীক্ষা শুরু', 'Physics Model Test টি খুব শীঘ্রই লাইভ হবে। নোটিফিকেশন পেতে যুক্ত থাকুন!', 'success')" class="w-full btn-buy py-3.5 rounded-xl text-white font-bold text-sm shadow-md">
+                                <i class="fa-solid fa-pen-to-square mr-2"></i> এক্সাম দিন
+                            </button>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-indigo-100 animated-blue-word dark:bg-indigo-950/80 text-xs font-bold shadow-sm">সাপ্তাহিক টেস্ট</span>
+                                    <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> ২৫ মিনিট</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Chemistry Weekly Quiz</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs mb-6">রাসায়নিক পরিবর্তন ও পরিমাণগত রসায়ন অধ্যায়ের ওপর বিশেষ সাপ্তাহিক পরীক্ষা।</p>
+                                <div class="space-y-2 text-xs text-slate-500 mb-6">
+                                    <div class="flex items-center justify-between">
+                                        <span>প্রশ্ন সংখ্যা: ২০টি MCQ</span>
+                                        <span>পূর্ণমান: ২০</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-indigo-600 h-full w-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="showModal('পরীক্ষা শুরু', 'Chemistry Weekly Quiz এর রেজিস্ট্রেশন চলছে।', 'success')" class="w-full btn-buy py-3.5 rounded-xl text-white font-bold text-sm shadow-md">
+                                <i class="fa-solid fa-pen-to-square mr-2"></i> এক্সাম দিন
+                            </button>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950/80 dark:text-purple-300 text-xs font-bold shadow-sm">মেগা টেস্ট</span>
+                                    <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> ৪৫ মিনিট</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">HSC & Admission Mock Test</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs mb-6">প্রকৌশল বিশ্ববিদ্যালয় ও ভর্তি পরীক্ষার আদলে সম্পূর্ণ সিলেবাসের ওপর মডেল টেস্ট।</p>
+                                <div class="space-y-2 text-xs text-slate-500 mb-6">
+                                    <div class="flex items-center justify-between">
+                                        <span>প্রশ্ন সংখ্যা: ৫০টি MCQ</span>
+                                        <span>পূর্ণমান: ৫০</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-indigo-600 h-full w-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="showModal('পরীক্ষা শুরু', 'Admission Mock Test এ অংশ নিতে রেজিস্টার করুন।', 'success')" class="w-full btn-buy py-3.5 rounded-xl text-white font-bold text-sm shadow-md">
+                                <i class="fa-solid fa-pen-to-square mr-2"></i> এক্সাম দিন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                        <span class="animated-gradient-text font-bold text-sm tracking-wider uppercase">সাফল্যের কথা</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">আমাদের কৃতি শিক্ষার্থীদের রেজাল্ট</h2>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">আমাদের প্ল্যাটফর্ম থেকে প্রস্তুতি নিয়ে এইচএসসি ও ভর্তি পরীক্ষায় দারুণ সাফল্য অর্জন করেছে শিক্ষার্থীরা।</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all text-center space-y-4 group">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-indigo-50 dark:bg-indigo-950 animated-blue-word flex items-center justify-center text-2xl font-bold animated-result-icon group-hover:scale-125 transition-transform shadow-md">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">HSC 2025 Success</h3>
+                            <p class="text-slate-500 text-xs">একাধিক শিক্ষার্থী জিপিএ-৫ অর্জনসহ বোর্ডের সেরা তালিকায় স্থান করে নিয়েছে।</p>
+                            <div class="text-2xl font-black animated-gradient-text">GPA 5.00 (Batch 2025)</div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all text-center space-y-4 group">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-50 dark:bg-blue-950 animated-blue-word flex items-center justify-center text-2xl font-bold animated-result-icon group-hover:scale-125 transition-transform shadow-md">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">University Admission</h3>
+                            <p class="text-slate-500 text-xs">পাবলিক বিশ্ববিদ্যালয় ও কৃষি বিশ্ববিদ্যালয়ে আমাদের শিক্ষার্থীদের আসন নিশ্চিত হয়েছে।</p>
+                            <div class="text-2xl font-black animated-gradient-text">১০০+ চান্সপ্রাপ্ত</div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all text-center space-y-4 group">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center text-2xl font-bold animated-result-icon group-hover:scale-125 transition-transform shadow-md">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Model Test Leaderboard</h3>
+                            <p class="text-slate-500 text-xs">নিয়মিত অনলাইন মডেলে টেস্টে হাজারো শিক্ষার্থীর মধ্যে শীর্ষস্থান অধিকার।</p>
+                            <div class="text-2xl font-black animated-gradient-text">৯৮% গড় সাফল্য</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teachers Section -->
+            <section id="teachers" class="py-20 border-b border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                        <span class="animated-gradient-text font-bold text-sm tracking-wider uppercase">আমাদের শিক্ষক ও প্যানেল</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">অভিজ্ঞ মেন্টর ও উপদেষ্টা বৃন্দ</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="MD. Junaid Ahmed.jpg" alt="MD. Junaid Ahmed" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Md. Junaid Ahmed</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">CEO & CO-Founder (English instructor)</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"ইংরেজিতে দক্ষ হয়ে উঠুন সহজে।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="MD. Jalinush Noyon.png" alt="Md. Jalinush Noyon" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Md. Jalinush Noyon</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Founder (Physics instructor)</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"পদার্থবিজ্ঞানের যুক্তি ও বাস্তব প্রয়োগ।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Julfath Jahan Oyishi.png" alt="Julfath Jahan Oyishi" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Julfath Jahan Oyishi</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Mentor & GK instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"বিশ্বকে জানুন, নিজেকে গড়ে তুলুন।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Mehedi Hasan Sagor.jpeg" alt="Mehedi Hasan Sagor" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Mehedi Hasan Sagor</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Biology instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"জীববিজ্ঞানকে জানুন গভীরভাবে।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="MD. Nazmus Shakib shuvo.jpeg" alt="MD. Nazmus Shakib shuvo" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">MD. Nazmus Shakib Shuvo</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Math instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"গণিত ভয় নয়, আনন্দের বিষয়।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Muntasir reza jibon.jpeg" alt="Muntasir reza jibon" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Muntasir Reza Jibon</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Chemistry instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"রসায়নের সূত্র সহজে শেখার উপায়।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Adiba Tahsin.jpeg" alt="Adiba Tahsin" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Adiba Tahsin</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">ICT instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"প্রযুক্তির সাথে গড়ুন আগামীর পথ।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Ummea Habiba Ety.png" alt="Ummea Habiba Ety" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Ummea Habiba Ety</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">Bangla instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"মাতৃভাষার টানে শুদ্ধ শিক্ষা।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Jahangir alam munna.png" alt="Jahangir alam munna" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Jahangir Alam Munna</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">ICT instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"কোডিং ও প্রোগ্রামিংয়ের সহজ পাঠ।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="MD. Nurey Akhter JESY.jpeg" alt="MD. Nurey Akhter JESY" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Md. Nuray Akhter Jesy</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">ICT instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"তথ্য প্রযুক্তির দক্ষ কারিগর হোন।"</p>
+                        </div>
+
+                        <div class="glass-photo-card rounded-3xl p-8 text-center group flex flex-col items-center">
+                            <div class="w-40 h-52 mx-auto rounded-2xl overflow-hidden mb-5 shadow-xl border border-white/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <img src="Khalekur Rahman Abir.jpeg" alt="Khalekur Rahman Abir" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-1">Khalekur Rahman Abir</h3>
+                            <p class="animated-blue-word text-sm font-semibold mb-3">GK Instructor</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs italic">"বিশ্বকে জানুন, নিজেকে গড়ে তুলুন।"</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <span class="animated-gradient-text font-bold text-sm tracking-wider uppercase">আমাদের সম্পর্কে</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                                শিক্ষার্থীদের সফলতাই <span class="animated-gradient-text">আমাদের মূল লক্ষ্য</span>
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                                **আমাদের পাঠশালা (Amader Pathshala)** হলো এইচএসসি এবং ভর্তি পরীক্ষার প্রস্তুতি নেওয়া শিক্ষার্থীদের জন্য একটি নির্ভরযোগ্য অনলাইন লার্নিং প্ল্যাটফর্ম। আমরা মানসম্মত ভিডিও ক্লাস, নিয়মিত অনলাইন পরীক্ষা এবং অভিজ্ঞ মেন্টরদের সঠিক দিকনির্দেশনার মাধ্যমে শিক্ষার্থীদের কাঙ্ক্ষিত লক্ষ্যে পৌঁছাতে সাহায্য করি।
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 pt-2">
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                    <h4 class="text-2xl font-black animated-blue-word mb-1">৩০০০+</h4>
+                                    <p class="text-xs text-slate-500">সন্তুষ্ট শিক্ষার্থী</p>
+                                </div>
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                                    <h4 class="text-2xl font-black animated-blue-word mb-1">১০০+</h4>
+                                    <p class="text-xs text-slate-500">পাবলিক বিশ্ববিদ্যালয় চান্সপ্রাপ্ত</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6 relative flex justify-center">
+                            <div class="w-full max-w-md bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+                                <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold shadow-md mb-4">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">আমাদের মিশন ও ভিশন</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">
+                                    দেশের প্রতিটি প্রান্তের শিক্ষার্থীর কাছে আধুনিক ও মানসম্মত শিক্ষা পৌঁছে দেওয়া এবং তাদের এইচএসসি ও এডমিশন জার্নিকে সহজ ও আনন্দদায়ক করা।
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ================= PROFILE VIEW ================= -->
+        <div id="view-profile" class="view-container hidden min-h-[85vh] py-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="profile-glass-card rounded-[2.5rem] p-6 sm:p-10 relative overflow-hidden transition-all">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-200/60 dark:border-slate-800/80">
+                        <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+                            <div class="relative w-28 h-28 rounded-full bg-slate-100 dark:bg-slate-800 p-1.5 shadow-2xl border-2 border-indigo-500/30 flex items-center justify-center group overflow-hidden">
+                                <img id="profile-avatar-img" src="" alt="Profile Picture" class="w-full h-full rounded-full object-cover hidden">
+                                <div id="profile-avatar-char-container" class="w-full h-full rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white text-4xl font-black shadow-inner">
+                                    <span id="profile-avatar-char">U</span>
+                                </div>
+                                <label for="profile-img-upload-input" class="absolute bottom-1 right-1 w-8 h-8 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-md hover:scale-110 cursor-pointer transition-transform z-10" title="Upload Profile Picture">
+                                    <i class="fa-solid fa-camera text-xs"></i>
+                                </label>
+                                <input type="file" id="profile-img-upload-input" accept="image/*" class="hidden" onchange="handleProfileImageUpload(event)">
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center justify-center sm:justify-start space-x-3">
+                                    <h2 id="profile-user-name" class="text-2xl sm:text-3xl font-extrabold tracking-tight animated-blue-word">User</h2>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 text-xs font-bold shadow-sm">Student</span>
+                                </div>
+                                <p id="profile-user-email" class="text-sm text-slate-500 dark:text-slate-400 flex items-center justify-center sm:justify-start space-x-2">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <span>user@email.com</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLogout()" class="px-6 py-2.5 rounded-2xl bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-100 text-rose-600 dark:text-rose-400 font-bold text-sm border border-rose-200 dark:border-rose-900/80 shadow-sm transition-all pro-btn flex items-center space-x-2">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 pb-6 flex items-center justify-between">
+                        <h3 class="text-xl sm:text-2xl font-black tracking-tight text-slate-800 dark:text-slate-100">My Enrolled Courses & Google Forms</h3>
+                        <span id="profile-course-count" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50 px-3 py-1.5 rounded-xl border border-indigo-100 dark:border-indigo-900">Enrolled: 0</span>
+                    </div>
+
+                    <div id="enrolled-courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= CHECKOUT / CART VIEW ================= -->
+        <div id="view-checkout" class="view-container hidden min-h-[80vh] py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <button onclick="switchPage('home')" class="text-sm font-semibold animated-blue-word hover:underline flex items-center space-x-2 mb-2">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>হোমে ফিরে যান</span>
+                        </button>
+                        <h1 class="text-3xl font-black">আপনার কার্ট ও পেমেন্ট গেটওয়ে</h1>
+                    </div>
+                    <button onclick="clearCart()" class="text-sm text-rose-500 font-semibold hover:underline">কার্ট খালি করুন</button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div id="cart-items-container" class="space-y-4"></div>
+                        <div id="empty-cart-msg" class="hidden text-center py-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center text-2xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">আপনার কার্ট খালি রয়েছে</h3>
+                            <p class="text-slate-500 text-sm mb-6">কোর্সসমূহ থেকে আপনার পছন্দের কোর্সটি কার্টে যোগ করুন।</p>
+                            <button onclick="switchPage('home')" class="btn-buy px-6 py-3 rounded-xl text-white font-bold text-sm shadow-md">কোর্সসমূহ দেখুন</button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                            <h3 class="text-xl font-bold pb-4 border-b border-slate-100 dark:border-slate-800">পেমেন্ট ও অর্ডার সারসংক্ষেপ</h3>
+                            
+                            <div id="checkout-user-info" class="p-4 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50 space-y-2"></div>
+
+                            <div class="space-y-3 text-sm pt-2">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">সাবটোটাল</span>
+                                    <span id="summary-subtotal" class="font-bold">৳০</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">ভ্যাট (০%)</span>
+                                    <span id="summary-vat" class="font-bold">৳০</span>
+                                </div>
+                                <div class="flex justify-between pt-3 border-t border-slate-100 dark:border-slate-800 text-base">
+                                    <span class="font-extrabold">মোট প্রদেয়</span>
+                                    <span id="summary-total" class="font-black animated-blue-word text-lg">৳০</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                                <button onclick="triggerDirectPayment()" class="w-full btn-buy py-4 rounded-xl text-white font-bold text-base shadow-lg mt-2">
+                                    পেমেন্ট অপশনে যান
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-extrabold text-white">আমাদের পাঠশালা</span>
+                            <p class="text-xs text-slate-400">Amader Pathshala</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        HSC & Admission Preparation-এর জন্য নির্ভরযোগ্য শিক্ষামূলক প্ল্যাটফর্ম। তোমার স্বপ্ন পূরণে আমরা সর্বদা পাশে আছি।
+                    </p>
+                    <div class="flex items-center space-x-3 text-slate-400 pt-2">
+                        <a href="https://www.facebook.com/amaderpathshalaa" class="pro-btn w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all shadow-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="pro-btn w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all shadow-sm"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://www.youtube.com/@amaderpathshala2" class="pro-btn w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all shadow-sm"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-base mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Home</button></li>
+                        <li><a href="#courses" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Courses</a></li>
+                        <li><a href="#exams" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Exams</a></li>
+                        <li><a href="#results" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Results</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-base mb-4">Other Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#free-classes" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Free Classes</a></li>
+                        <li><a href="#teachers" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">Teachers</a></li>
+                        <li><a href="#about" onclick="switchPage('home')" class="hover:text-indigo-400 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-base mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope animated-blue-word"></i>
+                            <span>amaderpathshala.info@gmail.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone animated-blue-word"></i>
+                            <span>+880 1791-083925</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; ২০২৬ Amader Pathshala. All rights reserved.</p>
+                <p class="text-slate-400 font-medium mt-2 sm:mt-0">learning today,leading tomorrow ♥</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Free Class Details Modal -->
+    <div id="free-class-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-md hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 max-w-4xl w-full mx-4 shadow-2xl border border-slate-200 dark:border-slate-800 relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeFreeClassModal()" class="pro-btn absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors shadow-sm">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2 pr-10">
+                <span class="px-3 py-1 rounded-full bg-indigo-100 animated-blue-word dark:bg-indigo-950/80 text-xs font-bold uppercase tracking-wider shadow-sm">ফ্রি ক্লাস কর্নার</span>
+                <h2 id="fc-modal-title" class="text-2xl sm:text-3xl font-black">Subject Name</h2>
+                <p class="text-xs text-slate-500">নিচের ক্লাসগুলো থেকে আপনার পছন্দের ভিডিওটি সিলেক্ট করে দেখতে পারেন অথবা সরাসরি ইউটিউবে দেখতে পারেন।</p>
+            </div>
+            <div id="fc-videos-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4"></div>
+        </div>
+    </div>
+
+    <!-- Step 1: Multiple Choice Modal -->
+    <div id="step1-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/70 backdrop-blur-md hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl border border-slate-200 dark:border-slate-800 relative space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl font-black animated-gradient-text">আপনার কোর্স নির্বাচন করুন</h3>
+                <p class="text-xs text-slate-500">অনুগ্রহ করে আপনার বিভাগ সিলেক্ট করুন</p>
+            </div>
+            <div class="space-y-3">
+                <label class="flex items-center space-x-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-indigo-500 transition-all font-semibold text-sm">
+                    <input type="radio" name="dept_choice" value="বিজ্ঞান" checked class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                    <span>১. বিজ্ঞান</span>
+                </label>
+                <label class="flex items-center space-x-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-indigo-500 transition-all font-semibold text-sm">
+                    <input type="radio" name="dept_choice" value="মানবিক" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                    <span>২. মানবিক</span>
+                </label>
+                <label class="flex items-center space-x-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-indigo-500 transition-all font-semibold text-sm">
+                    <input type="radio" name="dept_choice" value="বিভাগ পরিবর্তন" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                    <span>৩. বিভাগ পরিবর্তন</span>
+                </label>
+            </div>
+            <div class="flex gap-3 pt-2">
+                <button onclick="closeStep1Modal()" class="flex-1 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm transition-all shadow-sm">বাতিল করুন</button>
+                <button onclick="confirmStep1Modal()" class="flex-1 btn-buy py-3 rounded-xl text-white font-bold text-sm shadow-md">নিশ্চিত করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2: Information Added Modal -->
+    <div id="step2-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/80 backdrop-blur-md hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-8 max-w-xl w-full mx-4 shadow-2xl border border-slate-200 dark:border-slate-800 relative space-y-6">
+            <button onclick="closeStep2Modal()" class="pro-btn absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors shadow-sm z-10">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            
+            <div class="text-center space-y-1">
+                <span id="step2-dept-badge" class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider shadow-sm">মানবিক বিভাগ</span>
+                <h3 id="step2-title" class="text-xl sm:text-2xl font-black pt-2">HSC Science Combo- 4 Subjects</h3>
+            </div>
+
+            <!-- Course Info & Thumbnail Preview -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <div class="md:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 bg-slate-950">
+                    <img id="step2-img" src="" alt="Course Thumbnail" class="w-full h-full object-cover">
+                </div>
+                <div class="md:col-span-6 space-y-3 text-sm">
+                    <div class="p-4 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900 space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-slate-500 font-medium">কোর্সের মূল্য:</span>
+                            <strong id="step2-price" class="animated-blue-word text-base font-black">৳২৯৯৯</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500 font-medium">সিলেক্টেড বিভাগ:</span>
+                            <strong id="step2-dept-text" class="text-slate-800 dark:text-slate-100">মানবিক</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center">আপনার তথ্য সফলভাবে নতুন পেজে যুক্ত করা হয়েছে। নিচে ক্লিক করে পেমেন্ট অপশনে যান।</p>
+
+            <div class="flex gap-3 pt-2">
+                <button onclick="closeStep2Modal()" class="flex-1 py-3.5 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-bold text-sm transition-all shadow-sm">ফিরে যান</button>
+                <button onclick="proceedToGlassroomModal()" class="flex-1 btn-buy py-3.5 rounded-2xl text-white font-bold text-sm shadow-md">পেমেন্ট অপশনে যান</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 3: Glassroom Effect Pop-up Payment Gateway Window -->
+    <div id="glassroom-payment-modal" class="fixed inset-0 z-[130] flex items-center justify-center bg-slate-950/60 backdrop-blur-xl hidden">
+        <div class="glass-popup-card rounded-[2.5rem] p-6 sm:p-8 max-w-xl w-full mx-4 shadow-2xl relative space-y-6">
+            <!-- Close button -->
+            <button onclick="closeGlassroomModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-200/50 dark:bg-slate-800/50 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-300 transition-colors shadow-sm z-10">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="text-center space-y-1">
+                <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide text-slate-800 dark:text-slate-100">পেমেন্ট গেটওয়া সিলেক্ট করুন:</h3>
+            </div>
+
+            <!-- Gateways Grid (bKash, Nagad, Rocket) -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+                <!-- bKash -->
+                <div class="bg-pink-50/80 dark:bg-pink-950/40 border border-pink-200/60 dark:border-pink-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-xl bg-pink-500 text-white flex items-center justify-center text-xl shadow-md mb-1">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h4 class="font-extrabold text-pink-600 dark:text-pink-400 text-sm">bKash</h4>
+                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
+                            <span>+880 1791-083925</span>
+                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <img src="Bkash.png" alt="bKash QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    </div>
+                </div>
+
+                <!-- Nagad -->
+                <div class="bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl shadow-md mb-1">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h4 class="font-extrabold text-amber-600 dark:text-amber-400 text-sm">Nagad</h4>
+                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
+                            <span>+880 1791-083925</span>
+                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <img src="nogod.png" alt="Nagad QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    </div>
+                </div>
+
+                <!-- Rocket -->
+                <div class="bg-purple-50/80 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md mb-1">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h4 class="font-extrabold text-purple-600 dark:text-purple-400 text-sm">Rocket</h4>
+                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
+                            <span>+880 1791-083925</span>
+                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <img src="rocket.png" alt="Rocket QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Price Display -->
+            <div class="p-3.5 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-sm">
+                <span class="text-slate-600 dark:text-slate-300 font-bold">কোর্সের নাম ও মূল্য:</span>
+                <span id="glass-course-price" class="font-black text-indigo-600 dark:text-indigo-400 text-base">৳০</span>
+            </div>
+
+            <!-- Payment Confirmation Button -->
+            <button onclick="handlePaymentCompleted()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-600 hover:from-blue-800 hover:to-indigo-700 text-white font-extrabold text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center space-x-2">
+                <span>পেমেন্ট করেছি</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Generic Modal for Alerts -->
+    <div id="alert-modal" class="fixed inset-0 z-[140] flex items-center justify-center bg-slate-950/60 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 max-w-sm w-full mx-4 shadow-2xl border border-slate-200 dark:border-slate-800 relative text-center space-y-4">
+            <div id="alert-icon" class="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl mb-2"></div>
+            <h3 id="alert-title" class="text-xl font-bold">Title</h3>
+            <p id="alert-message" class="text-slate-500 text-sm">Message goes here</p>
+            <button onclick="closeAlertModal()" class="w-full btn-buy py-3 rounded-xl text-white font-bold text-sm shadow-md mt-4">ঠিক আছে</button>
+        </div>
+    </div>
+
+    <!-- MAIN JAVASCRIPT LOGIC -->
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function switchPage(pageId) {
+            document.getElementById('view-home').classList.add('hidden');
+            document.getElementById('view-checkout').classList.add('hidden');
+            document.getElementById('view-profile').classList.add('hidden');
+            
+            if (pageId === 'home') {
+                document.getElementById('view-home').classList.remove('hidden');
+            } else if (pageId === 'checkout') {
+                document.getElementById('view-checkout').classList.remove('hidden');
+                renderCheckoutPage();
+            } else if (pageId === 'profile') {
+                document.getElementById('view-profile').classList.remove('hidden');
+                renderProfilePage();
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.slider-dot');
+        let sliderInterval;
+
+        function showSlide(index) {
+            if (!slides.length) return;
+            if (index >= slides.length) currentSlideIndex = 0;
+            if (index < 0) currentSlideIndex = slides.length - 1;
+
+            slides.forEach((slide, idx) => {
+                if (idx === currentSlideIndex) {
+                    slide.style.opacity = '1';
+                } else {
+                    slide.style.opacity = '0';
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.classList.add('bg-white', 'scale-125');
+                    dot.classList.remove('bg-white/60');
+                } else {
+                    dot.classList.remove('bg-white', 'scale-125');
+                    dot.classList.add('bg-white/60');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlideIndex++;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+            resetSliderTimer();
+        }
+
+        function resetSliderTimer() {
+            clearInterval(sliderInterval);
+            sliderInterval = setInterval(nextSlide, 2000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlideIndex);
+            sliderInterval = setInterval(nextSlide, 2000);
+            initAuthSession();
+        });
+
+        const freeClassesData = {
+            'HSC Math 2nd': [
+                { title: 'উচ্চতর গণিত ২য় পত্র FINAL SUGGESTION', url: 'https://youtu.be/n3PE3t5Lafc?si=j3HSorx2j3tw0_mm', id: 'n3PE3t5Lafc' },
+                { title: 'সব গুরুত্বপূর্ণ MCQ এক ভিডিওতেই', url: 'https://youtu.be/PTrojLuOK9E?si=Lv8-DamxncyKAtNH', id: 'PTrojLuOK9E' },
+                { title: 'বিপরীত ত্রিকোণমিতিক ফাংশন A to Z', url: 'https://youtu.be/6FrEg0aNgGo?si=R5j7jrPD4K0AeE4f', id: '6FrEg0aNgGo' }
+            ],
+            'HSC 26 English 1st Paper': [
+                { title: 'Rearrange হবে পানির মতো সহজ!', url: 'https://youtu.be/T9L9rxtiKIk?si=Uuqs6y-2pzipQ2F8', id: 'T9L9rxtiKIk' },
+                { title: 'With Clue & Without Clue নিয়ে আর Confusion নয়!', url: 'https://youtu.be/im6E510WIJo?si=BysXTNNpF3ZHP6w', id: 'im6E510WIJo' },
+                { title: 'MCQ + Flow Chart + Summary', url: 'https://youtu.be/UcF6ZM9lsw4?si=zdXeLCKx-msNLKxA', id: 'UcF6ZM9lsw4' },
+                { title: '১ ক্লাসেই ১০০ মার্কসের ফুল প্রিপারেশন', url: 'https://youtu.be/8VAt04lecjs?si=TKKGVGgandMsxZPR', id: '8VAt04lecjs' },
+                { title: '৭ দিনে A+ পাওয়ার ফুল প্ল্যান', url: 'https://youtu.be/oG52VnlDJes?si=XOMrCec3vQKqLPsP', id: 'oG52VnlDJes' },
+                { title: '১০টি গুরুত্বপূর্ণ Paragraph', url: 'https://youtu.be/F3LZAHfKjvs?si=Yj2dZETcZgY02G7D', id: 'F3LZAHfKjvs' }
+            ],
+            'HSC Botany 2026': [
+                { title: 'CQ+MCQ+(ক+খ) ফুল রিভিশন', url: 'https://youtu.be/0UJRuxOrlCo?si=jJz5Kvi646GksSES', id: '0UJRuxOrlCo' },
+                { title: 'টিস্যু এবং টিস্যুতন্ত্র | Part-1', url: 'https://youtu.be/l3nFByhbeUk?si=PzD6FsdwhJLxXl32', id: 'l3nFByhbeUk' },
+                { title: 'অধ্যায় ৪ অনুজীব এক ক্লাসেই শেষ', url: 'https://youtu.be/tpPJzCZprHU?si=FvSarDs5IgPA6eYT', id: 'tpPJzCZprHU' },
+                { title: 'যে টপিকগুলো Must Be পড়তেই হবে', url: 'https://youtu.be/QT9tpf4PxOg?si=JnB-5X-nlDB_l8AR', id: 'QT9tpf4PxOg' },
+                { title: 'CQ + MCQ + Board Question + Final Revision', url: 'https://youtu.be/xjF1WPavavo?si=6SlHN29uufV-7Dsw', id: 'xjF1WPavavo' },
+                { title: 'CQ & MCQ Revision + Full Roadmap', url: 'https://youtu.be/Fwk_bV7OdQs?si=b0JYHDJUWYglcY7S', id: 'Fwk_bV7OdQs' },
+                { title: 'Chapter 2 Complete Biology', url: 'https://youtu.be/OXZ5ZWYDrVk?si=CPt0mCNhvpnx8pef', id: 'OXZ5ZWYDrVk' }
+            ],
+            'HSC Chemistry 1st Paper': [
+                { title: 'CQ তে ৫০/৫০ পাওয়ার টপিক', url: 'https://youtu.be/poiR7cmZm8I?si=UdNV2lm6-l6VxzUA', id: 'poiR7cmZm8I' },
+                { title: 'ম্যারাথন ক্লাস | CQ+MCQ ক্লিয়ার | Suggestion সহ এক ভিডিওতেই ইনশাআল্লাহ', url: 'https://youtu.be/KfJ-iboCVJ0?si=Mzr77PW0w5QkTE5B', id: 'KfJ-iboCVJ0' },
+                { title: 'শেষ ১৫ ঘন্টায় A+ প্রস্তুতি', url: 'https://youtu.be/letva2dxRso?si=9eSviXW9XvaiYipP', id: 'letva2dxRso' }
+            ],
+            'HSC Physics 2nd Paper': [
+                { title: 'MCQ + CQ + (ক+খ) + সকল সূত্র', url: 'https://youtu.be/Q0_hlqSmy8A?si=nimCrWvdAAwsPskW', id: 'Q0_hlqSmy8A' },
+                { title: 'সবচেয়ে গুরুত্বপূর্ণ ৫টি অধ্যায় । HSC 26& 27', url: 'https://youtu.be/wK9scrTbTEA?si=1AKXEm3pc0CMcjoc', id: 'wK9scrTbTEA' },
+                { title: 'যে ০৫টি অধ্যায় Skip করা যাবেই না', url: 'https://youtu.be/fYzn8v_PBuo?si=dgYpU01JsV4Vxp1D', id: 'fYzn8v_PBuo' }
+            ],
+            'HSC ICT 2026': [
+                { title: 'CQ + MCQ 100% Complete', url: 'https://youtu.be/5_tIEF6Hh40?si=AE_p0O4C-IC7dQ4d', id: '5_tIEF6Hh40' },
+                { title: 'যে টপিকগুলো পড়তেই হবে', url: 'https://youtu.be/mZY_4wJa9aw?si=rQ6OgMabxxvlSuYp', id: 'mZY_4wJa9aw' }
+            ]
+        };
+
+        function openFreeClassModal(subjectName) {
+            document.getElementById('fc-modal-title').innerText = subjectName + ' - ফ্রি ক্লাস কর্নার';
+            const container = document.getElementById('fc-videos-container');
+            container.innerHTML = '';
+
+            const list = freeClassesData[subjectName] || [];
+            if (list.length === 0) {
+                container.innerHTML = '<p class="col-span-full text-center text-slate-500 py-8">খুব শীঘ্রই এই বিষয়ের ক্লাস যুক্ত করা হবে।</p>';
+            } else {
+                list.forEach(item => {
+                    const cleanId = item.id.split('?')[0];
+                    const thumbUrl = `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
+                    const card = document.createElement('div');
+                    card.className = 'bg-slate-50 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between group';
+                    card.innerHTML = `
+                        <div>
+                            <div class="relative aspect-video overflow-hidden bg-slate-900">
+                                <img src="${thumbUrl}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+                                <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fa-solid fa-circle-play text-white text-4xl drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-sm line-clamp-2 text-slate-800 dark:text-slate-100 mb-2">${item.title}</h4>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <a href="${item.url}" target="_blank" class="block w-full text-center py-2.5 rounded-xl btn-buy text-white font-bold text-xs shadow-md">
+                                <i class="fa-brands fa-youtube mr-1.5"></i> ইউটিউবে দেখুন
+                            </a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+            document.getElementById('free-class-modal').classList.remove('hidden');
+        }
+
+        function closeFreeClassModal() {
+            document.getElementById('free-class-modal').classList.add('hidden');
+        }
+
+        const courseFormLinks = {
+            "Admission Course- Origin 26": {
+                "বিজ্ঞান": "https://forms.gle/BCtPNrZJqTXdXynBA",
+                "মানবিক": "https://forms.gle/qikT5H9oiz6xDhAu5",
+                "বিভাগ পরিবর্তন": "https://forms.gle/N3c9MMVxFEUL77S1A"
+            },
+            "Varsity Exam Batch- Origin 26": {
+                "বিজ্ঞান": "https://forms.gle/3GWMFRNPwY29nyeZA",
+                "মানবিক": "https://forms.gle/BYKhMhLeWF11okCc8",
+                "বিভাগ পরিবর্তন": "https://forms.gle/BYKhMhLeWF11okCc8"
+            },
+            "HSC 27 Science Combo+EBI": "https://forms.gle/aS6mzAEf9JJhi9wE7",
+            "HSC 27 & 28 Single Course": "https://forms.gle/Hx1pzTyt2b65SxrE9",
+            "HSC Science Combo- 4 Subjects": "https://forms.gle/s1P287oqsFhU9rUk9",
+            "EBI Full Course": "https://forms.gle/aS6mzAEf9JJhi9wE7",
+            "HSC 28 Science Combo+EBI": "https://forms.gle/KRG4DAjN8K26xqHS7",
+            "Pre Admission Course": {
+                "বিজ্ঞান": "https://forms.gle/zwRvR2qDv1RM1XAd8",
+                "মানবিক": "https://forms.gle/imadGH4RCLkptr16A",
+                "বিভাগ পরিবর্তন": "https://forms.gle/imadGH4RCLkptr16A"
+            }
+        };
+
+        function getCourseGoogleFormLink(courseName, dept) {
+            const mapped = courseFormLinks[courseName];
+            if (!mapped) return "https://forms.google.com";
+            if (typeof mapped === 'string') {
+                return mapped;
+            }
+            return mapped[dept] || mapped["বিজ্ঞান"] || "https://forms.google.com";
+        }
+
+        let pendingBuyCourse = null;
+        let selectedDept = 'বিজ্ঞান';
+
+        function buyNow(courseName, price, imgUrl) {
+            pendingBuyCourse = { name: courseName, price: price, imgUrl: imgUrl };
+            document.getElementById('step1-modal').classList.remove('hidden');
+        }
+
+        function closeStep1Modal() {
+            document.getElementById('step1-modal').classList.add('hidden');
+            pendingBuyCourse = null;
+        }
+
+        function confirmStep1Modal() {
+            const selectedRadio = document.querySelector('input[name="dept_choice"]:checked');
+            selectedDept = selectedRadio ? selectedRadio.value : 'বিজ্ঞান';
+            
+            document.getElementById('step1-modal').classList.add('hidden');
+
+            if (pendingBuyCourse) {
+                document.getElementById('step2-title').innerText = pendingBuyCourse.name;
+                document.getElementById('step2-dept-badge').innerText = selectedDept + ' বিভাগ';
+                document.getElementById('step2-dept-text').innerText = selectedDept;
+                document.getElementById('step2-price').innerText = '৳' + pendingBuyCourse.price;
+                document.getElementById('step2-img').src = pendingBuyCourse.imgUrl;
+                document.getElementById('step2-modal').classList.remove('hidden');
+            }
+        }
+
+        function closeStep2Modal() {
+            document.getElementById('step2-modal').classList.add('hidden');
+        }
+
+        function proceedToGlassroomModal() {
+            closeStep2Modal();
+            if (pendingBuyCourse) {
+                document.getElementById('glass-course-price').innerText = pendingBuyCourse.name + ' - ৳' + pendingBuyCourse.price;
+                document.getElementById('glassroom-payment-modal').classList.remove('hidden');
+            }
+        }
+
+        function closeGlassroomModal() {
+            document.getElementById('glassroom-payment-modal').classList.add('hidden');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showModal('কপি হয়েছে!', 'নম্বরটি সফলভাবে কপি করা হয়েছে: ' + text, 'success');
+            }).catch(() => {
+                showModal('ত্রুটি', 'কপি করা সম্ভব হয়নি।', 'error');
+            });
+        }
+
+        function handlePaymentCompleted() {
+            closeGlassroomModal();
+            if (pendingBuyCourse) {
+                let formUrl = getCourseGoogleFormLink(pendingBuyCourse.name, selectedDept);
+                const existingCourses = getPurchasedCourses();
+                existingCourses.push({ 
+                    name: pendingBuyCourse.name + ' (' + selectedDept + ')', 
+                    price: pendingBuyCourse.price,
+                    googleForm: formUrl 
+                });
+                savePurchasedCourses(existingCourses);
+                window.open(formUrl, '_blank');
+            }
+        }
+
+        let cart = [];
+
+        function addToCart(courseName, price) {
+            const existing = cart.find(item => item.name === courseName);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name: courseName, price: price, qty: 1 });
+            }
+            updateCartBadge();
+            showModal('সফলভাবে যুক্ত হয়েছে', `"${courseName}" আপনার কার্টে যোগ করা হয়েছে।`, 'success');
+        }
+
+        function updateCartBadge() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-badge').innerText = totalQty;
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartBadge();
+            renderCheckoutPage();
+        }
+
+        function renderCheckoutPage() {
+            const container = document.getElementById('cart-items-container');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            container.innerHTML = '';
+
+            const userInfoBox = document.getElementById('checkout-user-info');
+            const currentUser = getCurrentUser();
+            if (currentUser) {
+                userInfoBox.innerHTML = `
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-500 font-medium">এনরোলকারী শিক্ষার্থী:</span>
+                        <strong class="text-indigo-600 dark:text-indigo-400 font-bold">${currentUser.user_metadata?.full_name || currentUser.email}</strong>
+                    </div>
+                `;
+            } else {
+                userInfoBox.innerHTML = `
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-500 font-medium">অ্যাকাউন্ট স্ট্যাটাস:</span>
+                        <button type="button" onclick="openNetlifyAuth()" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">লগইন করুন</button>
+                    </div>
+                `;
+            }
+
+            if (cart.length === 0) {
+                emptyMsg.classList.remove('hidden');
+                document.getElementById('summary-subtotal').innerText = '৳০';
+                document.getElementById('summary-vat').innerText = '৳০';
+                document.getElementById('summary-total').innerText = '৳০';
+                return;
+            }
+
+            emptyMsg.classList.add('hidden');
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.qty;
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between gap-4';
+                card.innerHTML = `
+                    <div>
+                        <h4 class="font-bold text-sm">${item.name}</h4>
+                        <p class="text-xs text-slate-500 mt-1">৳${item.price} × ${item.qty}</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="font-black text-sm animated-blue-word">৳${item.price * item.qty}</span>
+                        <button onclick="removeFromCart(${index})" class="text-rose-500 hover:text-rose-700 p-1.5"><i class="fa-solid fa-trash-can text-xs"></i></button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            document.getElementById('summary-subtotal').innerText = '৳' + subtotal;
+            document.getElementById('summary-vat').innerText = '৳০';
+            document.getElementById('summary-total').innerText = '৳' + subtotal;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartBadge();
+            renderCheckoutPage();
+        }
+
+        function triggerDirectPayment() {
+            if (cart.length === 0) {
+                showModal('কার্ট খালি', 'অনুগ্রহ করে কার্টে কোর্স যুক্ত করুন।', 'error');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            pendingBuyCourse = { name: cart[0].name, price: total };
+            document.getElementById('glass-course-price').innerText = pendingBuyCourse.name + ' - ৳' + total;
+            document.getElementById('glassroom-payment-modal').classList.remove('hidden');
+        }
+
+        function getCurrentUser() {
+            if (window.netlifyCurrentUser) return window.netlifyCurrentUser;
+            if (window.netlifyIdentity && window.netlifyIdentity.currentUser()) {
+                window.netlifyCurrentUser = window.netlifyIdentity.currentUser();
+                return window.netlifyCurrentUser;
+            }
+            const savedUser = localStorage.getItem('ap_user_session');
+            if (savedUser) {
+                try {
+                    window.netlifyCurrentUser = JSON.parse(savedUser);
+                    return window.netlifyCurrentUser;
+                } catch(e){}
+            }
+            return null;
+        }
+
+        function getPurchasedCourses() {
+            const user = getCurrentUser();
+            if (!user) return [];
+            const saved = localStorage.getItem('user_courses_' + (user.id || user.email));
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        function savePurchasedCourses(courses) {
+            const user = getCurrentUser();
+            if (!user) return;
+            localStorage.setItem('user_courses_' + (user.id || user.email), JSON.stringify(courses));
+        }
+
+        function handleProfileImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const user = getCurrentUser();
+            if (!user) {
+                showModal('ত্রুটি', 'ছবি পরিবর্তন করতে অনুগ্রহ করে আগে লগইন করুন।', 'error');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageDataUrl = e.target.result;
+                localStorage.setItem('user_avatar_' + (user.id || user.email), imageDataUrl);
+                loadProfileAvatarImage(user);
+                showModal('সফল!', 'আপনার প্রোফাইল ছবি আপডেট করা হয়েছে।', 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadProfileAvatarImage(user) {
+            const imgElement = document.getElementById('profile-avatar-img');
+            const charContainer = document.getElementById('profile-avatar-char-container');
+            if (!imgElement) return;
+
+            const savedAvatar = localStorage.getItem('user_avatar_' + (user.id || user.email)) || user.user_metadata?.avatar_url;
+
+            if (savedAvatar) {
+                imgElement.src = savedAvatar;
+                imgElement.classList.remove('hidden');
+                charContainer.classList.add('hidden');
+            } else {
+                imgElement.classList.add('hidden');
+                charContainer.classList.remove('hidden');
+            }
+        }
+
+        function openNetlifyAuth() {
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.open();
+            }
+        }
+
+        function handleLogout() {
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.logout();
+            }
+            window.netlifyCurrentUser = null;
+            localStorage.removeItem('ap_user_session');
+            updateAuthUI();
+            switchPage('home');
+            showModal('লগআউট সফল', 'আপনি সফলভাবে লগআউট করেছেন।', 'success');
+        }
+
+        function renderProfilePage() {
+            const currentUser = getCurrentUser();
+            if (!currentUser) {
+                switchPage('home');
+                openNetlifyAuth();
+                return;
+            }
+
+            const displayName = currentUser.user_metadata?.full_name || currentUser.email.split('@')[0];
+            const displayEmail = currentUser.email;
+
+            document.getElementById('profile-user-name').innerText = displayName;
+            document.getElementById('profile-user-email').innerText = displayEmail;
+            document.getElementById('profile-avatar-char').innerText = displayName.charAt(0).toUpperCase();
+
+            loadProfileAvatarImage(currentUser);
+
+            const enrolledCourses = getPurchasedCourses();
+            document.getElementById('profile-course-count').innerText = `Enrolled: ${enrolledCourses.length}`;
+
+            const grid = document.getElementById('enrolled-courses-grid');
+            grid.innerHTML = '';
+
+            if (enrolledCourses.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 px-4 bg-slate-50/50 dark:bg-slate-900/50 rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 space-y-4">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-indigo-50 dark:bg-indigo-950/80 text-indigo-500 flex items-center justify-center text-2xl shadow-sm">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-slate-800 dark:text-slate-200">আপনি এখনও কোনো কোর্সে এনরোল করেননি!</h4>
+                            <p class="text-xs text-slate-500 max-w-md mx-auto">এইচএসসি ও এডমিশন প্রস্তুতির সেরা কোর্সসমূহে এনরোল করে প্রস্তুতি এখনই শুরু করুন।</p>
+                        </div>
+                        <button onclick="switchPage('home'); location.href='#courses';" class="btn-buy px-6 py-2.5 rounded-xl text-white font-bold text-xs shadow-md">
+                            কোর্সসমূহ ব্রাউজ করুন
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            enrolledCourses.forEach(course => {
+                const card = document.createElement('div');
+                card.className = 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all';
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-base truncate text-slate-800 dark:text-slate-100">${course.name}</h4>
+                                <p class="text-xs text-slate-400">Payment Verified</p>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 text-xs text-amber-700 dark:text-amber-300 font-medium">
+                            <i class="fa-solid fa-circle-exclamation mr-1"></i> পেমেন্ট সফল হয়েছে। নিচে ক্লিক করে আপনার এনরোলমেন্ট কনফার্ম করুন:
+                        </div>
+                    </div>
+                    <div class="space-y-2 mt-6">
+                        <a href="${course.googleForm || 'https://forms.google.com'}" target="_blank" class="block w-full text-center py-3 rounded-xl btn-buy text-white font-bold text-xs shadow-md">
+                            <i class="fa-solid fa-file-lines mr-1.5"></i> Enroll Confirm করুন (Google Form)
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function initAuthSession() {
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', user => {
+                    if (user) {
+                        window.netlifyCurrentUser = user;
+                        localStorage.setItem('ap_user_session', JSON.stringify(user));
+                    }
+                    updateAuthUI();
+                });
+                window.netlifyIdentity.on('login', user => {
+                    window.netlifyCurrentUser = user;
+                    localStorage.setItem('ap_user_session', JSON.stringify(user));
+                    window.netlifyIdentity.close();
+                    updateAuthUI();
+                    showModal('লগইন সফল!', `স্বাগতম, ${user.user_metadata?.full_name || user.email}!`, 'success');
+                });
+                window.netlifyIdentity.on('logout', () => {
+                    window.netlifyCurrentUser = null;
+                    localStorage.removeItem('ap_user_session');
+                    updateAuthUI();
+                    switchPage('home');
+                });
+            }
+            updateAuthUI();
+        }
+
+        function updateAuthUI() {
+            const container = document.getElementById('auth-action-container');
+            const mobileContainer = document.getElementById('mobile-auth-container');
+            const currentUser = getCurrentUser();
+
+            if (currentUser) {
+                const displayName = currentUser.user_metadata?.full_name || currentUser.email.split('@')[0];
+                const avatarChar = displayName.charAt(0).toUpperCase();
+
+                const savedAvatar = localStorage.getItem('user_avatar_' + (currentUser.id || currentUser.email)) || currentUser.user_metadata?.avatar_url;
+
+                const avatarHTML = savedAvatar 
+                    ? `<img src="${savedAvatar}" class="w-8 h-8 rounded-full object-cover shadow-sm border border-indigo-300">`
+                    : `<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">${avatarChar}</div>`;
+
+                container.innerHTML = `
+                    <button onclick="switchPage('profile')" class="flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900/80 p-1 sm:px-3 sm:py-1.5 rounded-full border border-indigo-200 dark:border-indigo-800 transition-all shadow-sm">
+                        ${avatarHTML}
+                        <span class="text-xs font-bold animated-blue-word hidden sm:inline max-w-[90px] truncate">${displayName}</span>
+                    </button>
+                `;
+                mobileContainer.innerHTML = `
+                    <div class="space-y-2">
+                        <button onclick="switchPage('profile'); toggleMobileMenu();" class="w-full py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 font-bold text-sm text-center border border-indigo-200 dark:border-indigo-900 shadow-sm flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-user-circle text-base"></i>
+                            <span>My Profile (${displayName})</span>
+                        </button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button onclick="openNetlifyAuth()" class="btn-buy px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-white font-semibold text-xs sm:text-sm shadow-md">
+                        Login
+                    </button>
+                `;
+                mobileContainer.innerHTML = `
+                    <button onclick="openNetlifyAuth()" class="w-full btn-buy py-3 rounded-xl text-white font-semibold text-sm text-center shadow-md">Register / Login</button>
+                `;
+            }
+        }
+
+        function showModal(title, message, type) {
+            document.getElementById('alert-title').innerText = title;
+            document.getElementById('alert-message').innerText = message;
+            const icon = document.getElementById('alert-icon');
+            if (type === 'success') {
+                icon.className = 'w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mb-2 shadow-sm';
+                icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+            } else {
+                icon.className = 'w-16 h-16 mx-auto rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-3xl mb-2 shadow-sm';
+                icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            }
+            document.getElementById('alert-modal').classList.add('hidden');
+            document.getElementById('alert-modal').classList.remove('hidden');
+        }
+
+        function closeAlertModal() {
+            document.getElementById('alert-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
