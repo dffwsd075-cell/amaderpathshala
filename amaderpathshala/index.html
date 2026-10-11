@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="google17f661f2cd0ddf07" />
     <link rel="icon" type="image/png" href="your-logo.png">
     <title>আমাদের পাঠশালা - Amader Pathshala | HSC & Admission Preparation</title>
     <!-- Tailwind CSS CDN -->
@@ -187,14 +188,14 @@
         }
 
         .glass-popup-card {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
         }
         .dark .glass-popup-card {
-            background: rgba(15, 23, 42, 0.65);
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
@@ -1158,81 +1159,71 @@
         </div>
     </div>
 
-    <!-- Step 3: Glassroom Effect Pop-up Payment Gateway Window -->
-    <div id="glassroom-payment-modal" class="fixed inset-0 z-[130] flex items-center justify-center bg-slate-950/60 backdrop-blur-xl hidden">
-        <div class="glass-popup-card rounded-[2.5rem] p-6 sm:p-8 max-w-xl w-full mx-4 shadow-2xl relative space-y-6">
+    <!-- Step 3: Glassroom Effect Pop-up Payment Gateway Window (Updated to Match Image 2 Exact Style) -->
+    <div id="glassroom-payment-modal" class="fixed inset-0 z-[130] flex items-center justify-center bg-slate-950/70 backdrop-blur-xl hidden">
+        <div class="glass-popup-card rounded-[2.5rem] p-6 sm:p-8 max-w-xl w-full mx-4 shadow-2xl relative space-y-6 border border-white/20 dark:border-slate-700/50">
             <!-- Close button -->
-            <button onclick="closeGlassroomModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-200/50 dark:bg-slate-800/50 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-300 transition-colors shadow-sm z-10">
+            <button onclick="closeGlassroomModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-200/60 dark:bg-slate-800/60 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-300 transition-colors shadow-sm z-10">
                 <i class="fa-solid fa-xmark text-sm"></i>
             </button>
 
             <!-- Header -->
             <div class="text-center space-y-1">
-                <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide text-slate-800 dark:text-slate-100">পেমেন্ট গেটওয়া সিলেক্ট করুন:</h3>
+                <h3 class="text-xl sm:text-2xl font-black tracking-wide text-slate-800 dark:text-slate-100">পেমেন্ট গেটওয়া সিলেক্ট করুন:</h3>
             </div>
 
-            <!-- Gateways Grid (bKash, Nagad, Rocket) -->
+            <!-- Gateways Grid (bKash, Nagad, Rocket) Matching Image 2 Design -->
             <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
                 <!-- bKash -->
-                <div class="bg-pink-50/80 dark:bg-pink-950/40 border border-pink-200/60 dark:border-pink-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-pink-500 text-white flex items-center justify-center text-xl shadow-md mb-1">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <h4 class="font-extrabold text-pink-600 dark:text-pink-400 text-sm">bKash</h4>
-                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
-                            <span>+880 1791-083925</span>
-                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
-                        </div>
+                <div class="bg-pink-100/70 dark:bg-pink-950/40 border border-pink-200/80 dark:border-pink-900/50 rounded-2xl p-4 text-center space-y-2 shadow-sm flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-500 text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <div class="pt-2">
-                        <img src="Bkash.png" alt="bKash QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    <h4 class="font-extrabold text-pink-600 dark:text-pink-400 text-sm">bKash</h4>
+                    <div class="flex items-center justify-center space-x-1 w-full text-[11px] font-mono text-slate-800 dark:text-slate-200 font-bold bg-white/80 dark:bg-slate-900/80 py-1.5 px-2 rounded-xl border border-pink-200/50 dark:border-pink-900/30">
+                        <span>+880 1791-083925</span>
+                        <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-1" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
 
                 <!-- Nagad -->
-                <div class="bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl shadow-md mb-1">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <h4 class="font-extrabold text-amber-600 dark:text-amber-400 text-sm">Nagad</h4>
-                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
-                            <span>+880 1791-083925</span>
-                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
-                        </div>
+                <div class="bg-amber-100/70 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-900/50 rounded-2xl p-4 text-center space-y-2 shadow-sm flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <div class="pt-2">
-                        <img src="nogod.png" alt="Nagad QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    <h4 class="font-extrabold text-amber-600 dark:text-amber-400 text-sm">Nagad</h4>
+                    <div class="flex items-center justify-center space-x-1 w-full text-[11px] font-mono text-slate-800 dark:text-slate-200 font-bold bg-white/80 dark:bg-slate-900/80 py-1.5 px-2 rounded-xl border border-amber-200/50 dark:border-amber-900/30">
+                        <span>+880 1791-083925</span>
+                        <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-1" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
 
                 <!-- Rocket -->
-                <div class="bg-purple-50/80 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-900/50 rounded-2xl p-3 sm:p-4 text-center space-y-2 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md mb-1">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <h4 class="font-extrabold text-purple-600 dark:text-purple-400 text-sm">Rocket</h4>
-                        <div class="flex items-center justify-center space-x-1 mt-1 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold bg-white/70 dark:bg-slate-900/70 py-1 px-1 rounded-lg">
-                            <span>+880 1791-083925</span>
-                            <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-0.5" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
-                        </div>
+                <div class="bg-purple-100/70 dark:bg-purple-950/40 border border-purple-200/80 dark:border-purple-900/50 rounded-2xl p-4 text-center space-y-2 shadow-sm flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <div class="pt-2">
-                        <img src="rocket.png" alt="Rocket QR Code" class="w-16 h-16 mx-auto rounded-lg border border-slate-300 shadow-inner object-cover">
+                    <h4 class="font-extrabold text-purple-600 dark:text-purple-400 text-sm">Rocket</h4>
+                    <div class="flex items-center justify-center space-x-1 w-full text-[11px] font-mono text-slate-800 dark:text-slate-200 font-bold bg-white/80 dark:bg-slate-900/80 py-1.5 px-2 rounded-xl border border-purple-200/50 dark:border-purple-900/30">
+                        <span>+880 1791-083925</span>
+                        <button onclick="copyToClipboard('+8801791083925')" class="text-indigo-600 hover:text-indigo-800 ml-1" title="Copy Number"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
             </div>
 
+            <!-- Instruction Text -->
+            <p class="text-center text-amber-700 dark:text-amber-300 font-bold text-sm sm:text-base py-1">
+                উক্ত নাম্বারে সেন্ড মানি করে 'পেমেন্ট করেছি' তে চাপ দিন
+            </p>
+
             <!-- Course Price Display -->
-            <div class="p-3.5 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-sm">
-                <span class="text-slate-600 dark:text-slate-300 font-bold">কোর্সের নাম ও মূল্য:</span>
-                <span id="glass-course-price" class="font-black text-indigo-600 dark:text-indigo-400 text-base">৳০</span>
+            <div class="p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-sm sm:text-base shadow-sm">
+                <span class="text-slate-700 dark:text-slate-300 font-bold">কোর্সের নাম ও মূল্য:</span>
+                <span id="glass-course-price" class="font-black text-indigo-600 dark:text-indigo-400">Varsity Exam Batch- Origin 26 - ৳৯৯৯</span>
             </div>
 
             <!-- Payment Confirmation Button -->
-            <button onclick="handlePaymentCompleted()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-600 hover:from-blue-800 hover:to-indigo-700 text-white font-extrabold text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center space-x-2">
+            <button onclick="handlePaymentCompleted()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold text-lg shadow-xl shadow-blue-500/30 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center space-x-2">
                 <span>পেমেন্ট করেছি</span>
             </button>
         </div>
